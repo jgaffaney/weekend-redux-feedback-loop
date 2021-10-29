@@ -1,9 +1,11 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react'
+import {useHistory} from 'react-router-dom';
 
 function Feeling() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [feelingInput, setFeelingInput] = useState('');
 
@@ -15,6 +17,7 @@ function Feeling() {
             payload: feelingInput
         })
         setFeelingInput('');
+        history.push('/understanding')
     }
 
     return(
@@ -24,6 +27,7 @@ function Feeling() {
             <input 
                 type="number" 
                 onChange={setFeelingInput} />
+            <button type="submit">Next</button>
         </form>
     )
 }
