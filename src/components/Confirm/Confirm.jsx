@@ -11,20 +11,19 @@ function Confirm() {
 
     const handleSubmit = () => {
         console.log('clicked');
-        axios.post('/feedback', {submission})
+        axios({
+                method: 'POST',
+                url: '/feedback',
+                data: submission})
             .then(response => {
                 console.log('POSTED');
                 dispatch({type: 'CLEAR_RESULTS'})
                 history.push('/');
             }).catch(err => {
-                console.log('Error on POST: ', err);
+                console.log('Error on POST to server: ', err);
                 alert('ERROR on POST')
             })
-    
-        
-        
-
-    }
+        }
 
     return (
         <div>
