@@ -7,7 +7,7 @@ function Feeling() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const [feelingInput, setFeelingInput] = useState('');
+    const [feelingInput, setFeelingInput] = useState(0);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,7 +26,7 @@ function Feeling() {
             <label>Feeling?</label>
             <input 
                 type="number" 
-                onChange={setFeelingInput} />
+                onChange={(e) => {setFeelingInput(e.target.value)}} />
             <button type="submit">Next</button>
         </form>
     )

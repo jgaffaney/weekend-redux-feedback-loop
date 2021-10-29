@@ -27,7 +27,7 @@ function Comments() {
             <label>Comments?</label>
             <input 
                 type="textarea" 
-                onChange={setCommentsInput} />
+                onChange={(e)=>setCommentsInput(e.target.value)} />
             <button type="submit">Next</button>
         </form>
     )

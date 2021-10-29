@@ -26,7 +26,7 @@ function Support() {
             <label>Support?</label>
             <input 
                 type="number" 
-                onChange={setSupportInput} />
+                onChange={(e)=> setSupportInput(e.target.value)} />
             <button type="submit">Next</button>
         </form>
     )

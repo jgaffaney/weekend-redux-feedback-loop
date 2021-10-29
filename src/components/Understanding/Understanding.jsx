@@ -25,7 +25,7 @@ function Understanding() {
             <label>Understanding?</label>
             <input 
                 type="number" 
-                onChange={setUnderstandingInput} />
+                onChange={(e) => setUnderstandingInput(e.target.value)} />
             <button type="submit">Next</button>
         </form>
     )
