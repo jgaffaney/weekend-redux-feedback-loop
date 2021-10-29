@@ -1,5 +1,6 @@
 import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import axios from 'axios';
 
 
 function Confirm() {
@@ -10,14 +11,18 @@ function Confirm() {
 
     const handleSubmit = () => {
         console.log('clicked');
-        dispatch({
-            type: 'SET_FEEDBACK',
-            payload: submission
-        })
-        dispatch({
-            type: 'CLEAR_RESULTS'
-        })
-        history.push('/');
+        axios.post('/feedback', {submission})
+            .then(response => {
+                console.log('POSTED');
+                dispatch({type: 'CLEAR_RESULTS'})
+                history.push('/');
+            }).catch(err => {
+                console.log('Error on POST: ', err);
+                alert('ERROR on POST')
+            })
+    
+        
+        
 
     }
 
