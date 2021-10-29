@@ -18,7 +18,7 @@ function Comments() {
             payload: commentsInput
         })
         setCommentsInput('');
-        // history.push('/')
+        history.push('/confirm')
     }
 
     return(
@@ -26,7 +26,7 @@ function Comments() {
             <h2>Any comments you want to leave?</h2>
             <label>Comments?</label>
             <input 
-                type="number" 
+                type="textarea" 
                 onChange={setCommentsInput} />
             <button type="submit">Next</button>
         </form>

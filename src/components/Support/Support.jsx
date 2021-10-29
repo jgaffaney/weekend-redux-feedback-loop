@@ -1,9 +1,11 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
 function Support() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [supportInput, setSupportInput] = useState('');
 
@@ -15,6 +17,7 @@ function Support() {
             payload: supportInput
         })
         setSupportInput('');
+        history.push('/comments')
     }
 
     return(
@@ -24,6 +27,7 @@ function Support() {
             <input 
                 type="number" 
                 onChange={setSupportInput} />
+            <button type="submit">Next</button>
         </form>
     )
 }

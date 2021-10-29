@@ -1,9 +1,11 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
 function Understanding() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [understandingInput, setUnderstandingInput] = useState('');
 
@@ -14,6 +16,7 @@ function Understanding() {
             payload: understandingInput
         })
         setUnderstandingInput('');
+        history.push('/support');
     }
 
     return(
@@ -23,6 +26,7 @@ function Understanding() {
             <input 
                 type="number" 
                 onChange={setUnderstandingInput} />
+            <button type="submit">Next</button>
         </form>
     )
 }

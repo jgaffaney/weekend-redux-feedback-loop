@@ -1,6 +1,14 @@
+
+
 function Confirm() {
     return (
-        <div>Confirm</div>
+        <div>
+            <h2>Review Your Feedback</h2>
+            <br />
+
+        </div>
+        
+
     )
 }
 
