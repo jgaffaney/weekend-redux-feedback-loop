@@ -32,7 +32,7 @@ const displayFeedback = (state = [], action) => {
         case 'SET_FEEDBACK':
             return [...state, action.payload]
         default:
-            return []
+            return state
     }
 }
 

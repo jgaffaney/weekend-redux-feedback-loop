@@ -1,8 +1,25 @@
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
+
 
 function Confirm() {
 
+    const dispatch = useDispatch();
+    const history = useHistory();
     const submission = useSelector(store => store.submission)
+
+    const handleSubmit = () => {
+        console.log('clicked');
+        dispatch({
+            type: 'SET_FEEDBACK',
+            payload: submission
+        })
+        dispatch({
+            type: 'CLEAR_RESULTS'
+        })
+        history.push('/');
+
+    }
 
     return (
         <div>
