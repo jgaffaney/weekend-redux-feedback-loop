@@ -14,12 +14,12 @@ function Support() {
             type: 'ADD_SUPPORT',
             payload: supportInput
         })
-        setFeelingInput('');
+        setSupportInput('');
     }
 
     return(
         <form onSubmit={handleSubmit}>
-            <h2>How are you being supported today?</h2>
+            <h2>How well are you being supported?</h2>
             <label>Support?</label>
             <input 
                 type="number" 
