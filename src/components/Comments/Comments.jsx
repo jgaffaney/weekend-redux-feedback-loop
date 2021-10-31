@@ -1,6 +1,8 @@
-import { useDispatch, userSelector, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import {Button} from '@mui/material';
+
 
 
 function Comments() {
@@ -40,8 +42,8 @@ function Comments() {
                     onChange={(e) => setCommentsInput(e.target.value)}
                     defaultValue={currentComments} />
             </form>
-            <button onClick={back}>Back</button>
-            <button onClick={handleSubmit}>Next</button>
+            <Button  variant= 'outlined'onClick={back}>Back</Button>
+            <Button  variant= 'outlined'onClick={handleSubmit}>Next</Button>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import {useSelector, useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
+import {Button} from '@mui/material';
 
 
 function Confirm() {
@@ -38,7 +39,7 @@ function Confirm() {
             <div className='review-line-item' onClick={() => {handleClick('understanding')}}>Understanding: {submission.understanding}</div>
             <div className='review-line-item' onClick={() => {handleClick('support')}}>Support: {submission.support}</div>
             <div className='review-line-item' onClick={() => {handleClick('comments')}}>Comments: {submission.comments}</div>
-            <button onClick={handleSubmit}>Submit</button>
+            <Button  variant= 'outlined'onClick={handleSubmit}>Submit</Button>
         </div>
     )
 }

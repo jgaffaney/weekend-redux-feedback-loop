@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom';
+import {Button} from '@mui/material';
 
 function Feeling() {
 
@@ -36,7 +37,7 @@ function Feeling() {
                     defaultValue={currentFeeling} 
                     required />
             </form>
-            <button onClick={handleSubmit}>Next</button>
+            <Button variant= 'outlined' onClick={handleSubmit}>Next</Button>
         </div>
     )
 }
