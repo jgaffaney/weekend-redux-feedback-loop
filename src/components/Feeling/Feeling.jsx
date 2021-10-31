@@ -39,7 +39,7 @@ function Feeling() {
                     autoFocus />
             </form>
             <br />
-            <Button variant= 'outlined' color='success' onClick={handleSubmit}>Next</Button>
+            <Button variant= 'outlined' onClick={handleSubmit}>Next</Button>
         </div>
     )
 }

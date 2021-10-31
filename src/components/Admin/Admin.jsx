@@ -2,6 +2,12 @@ import {useSelector} from 'react-redux';
 import {useEffect} from 'react';
 import DisplayFeedback from '../DisplayFeedback/DisplayFeedback.jsx';
 import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 
 function Admin({fetchFeedback}) {
@@ -13,23 +19,25 @@ function Admin({fetchFeedback}) {
     }, []);
 
     return(
-        <div>
-            <Table>
-                <thead>
-                    <tr>
-                        <th>Feeling</th>
-                        <th>Understanding</th>
-                        <th>Support</th>
-                        <th>Comments</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div className='table-div'>
+            <TableContainer >
+            <Table sx={{minWidth: 650}} size='small'>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Feeling</TableCell>
+                        <TableCell align='right'>Understanding</TableCell>
+                        <TableCell align='right'>Support</TableCell>
+                        <TableCell align='right'>Comments</TableCell>
+                        <TableCell align='right'>Delete</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
                     {feedbackResults.map((row) => (
-                        <DisplayFeedback row={row} fetchFeedback={fetchFeedback}/>
+                        <DisplayFeedback key={row.id} row={row} fetchFeedback={fetchFeedback}/>
                     ))}
-                </tbody>
+                </TableBody>
             </Table>
+            </TableContainer>
         </div>
     )
 }

@@ -1,9 +1,13 @@
+body {
+  background-color: #31572C;
+}
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #033076;
+  background-color: #132A13;
   min-height: 70px;
   padding: 20px;
   color: white;
@@ -19,9 +23,17 @@
 }
 
 .questionnaire {
-
-  
+  background-color: #31572C;
 }
+
+.questionnaire input, label {
+  font-size: 115%;
+}
+
+.confirmation {
+  font-size: 175%;
+}
+
 h4 {
   font-style: italic;
 }

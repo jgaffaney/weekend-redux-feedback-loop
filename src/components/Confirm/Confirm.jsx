@@ -31,7 +31,7 @@ function Confirm() {
         }
 
     return (
-        <div>
+        <div className='confirmation'>
             <h2>Review Your Feedback</h2>
             <h4>If you like to change anything just click on that row</h4>
             <br />
