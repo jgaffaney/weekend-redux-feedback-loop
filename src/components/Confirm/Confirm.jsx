@@ -18,7 +18,7 @@ function Confirm() {
             .then(response => {
                 console.log('POSTED');
                 dispatch({type: 'CLEAR_RESULTS'})
-                history.push('/');
+                history.push('/success');
             }).catch(err => {
                 console.log('Error on POST to server: ', err);
                 alert('ERROR on POST')
