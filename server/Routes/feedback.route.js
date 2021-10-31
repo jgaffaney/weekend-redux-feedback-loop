@@ -35,6 +35,23 @@ router.post('/', (req, res) => {
        })
 })
 
+router.put('/:id', (req, res) => {
+    const idToUpdate = req.params.id
+    const queryText = `
+        UPDATE feedback
+        SET flagged = NOT flagged
+        WHERE id=$1;
+    `
+    const values = [idToUpdate];
+    pool.query(queryText, values)
+        .then(response => { 
+            res.sendStatus(204)
+        }).catch(err => {
+            console.log('Error on PUT: ', err);
+            res.sendStatus(500)
+        })
+})
+
 router.delete('/:id', (req, res) => {
     const idToDelete = req.params.id
     const queryText = `
@@ -47,6 +64,7 @@ router.delete('/:id', (req, res) => {
             res.sendStatus(204)
         }).catch(err => {
             console.log('Error on delete: ', err);
+            res.sendStatus(500)
         })
 })
 
