@@ -12,10 +12,10 @@ function Feeling() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        // send dispatch with the input or currentFeeling if no input change
         dispatch({
             type: 'ADD_FEELING',
-            payload: feelingInput
+            payload: feelingInput || currentFeeling
         })
         setFeelingInput('');
         history.push('/understanding')

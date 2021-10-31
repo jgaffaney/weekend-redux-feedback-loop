@@ -32,16 +32,14 @@ function Confirm() {
     return (
         <div>
             <h2>Review Your Feedback</h2>
+            <h4>If you like to change anything just click on that row</h4>
             <br />
-            <div className='review-line-item' onClick={handleClick}>Feeling: {submission.feeling}</div>
+            <div className='review-line-item' onClick={() => {handleClick('')}}>Feeling: {submission.feeling}</div>
             <div className='review-line-item' onClick={() => {handleClick('understanding')}}>Understanding: {submission.understanding}</div>
             <div className='review-line-item' onClick={() => {handleClick('support')}}>Support: {submission.support}</div>
             <div className='review-line-item' onClick={() => {handleClick('comments')}}>Comments: {submission.comments}</div>
             <button onClick={handleSubmit}>Submit</button>
-
         </div>
-        
-
     )
 }
 

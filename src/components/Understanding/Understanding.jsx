@@ -16,9 +16,10 @@ function Understanding() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // send dispatch with the input or currentUnderstanding if no input change
         dispatch({
             type: 'ADD_UNDERSTANDING',
-            payload: understandingInput
+            payload: understandingInput || currentUnderstanding
         })
         setUnderstandingInput('');
         history.push('/support');

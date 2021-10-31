@@ -17,13 +17,16 @@ function Support() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // send dispatch with the input or currentSupport if no input change
         dispatch({
             type: 'ADD_SUPPORT',
-            payload: supportInput
+            payload: supportInput || currentSupport
         })
         setSupportInput('');
         history.push('/comments')
     }
+
+
 
     return(
         <div>
