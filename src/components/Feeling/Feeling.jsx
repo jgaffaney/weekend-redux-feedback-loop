@@ -16,7 +16,7 @@ function Feeling() {
         e.preventDefault();
         // require input
         if(!feelingInput && !currentFeeling) {
-            return Swal.fire({title: 'Input Required', text:'Please enter a value', icon: 'error'})
+            return Swal.fire({title: 'Input Required', text:'Please enter a value', icon: 'warning'})
         }
         // send dispatch with the input or currentFeeling if no input change or 'not answered'
         dispatch({

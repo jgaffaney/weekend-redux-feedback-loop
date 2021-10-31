@@ -21,7 +21,7 @@ function Support() {
         e.preventDefault();
         // require input
         if(!supportInput && !currentSupport) {
-            return alert('a value must be provided')
+            return Swal.fire({title: 'Input Required', text:'Please enter a value', icon: 'warning'})
         }
         // send dispatch with the input or currentSupport if no input change or 'not answered'
         dispatch({

@@ -22,7 +22,7 @@ function Understanding() {
         e.preventDefault();
         // require input
         if(!understandingInput && !currentUnderstanding) {
-            return Swal.fire({title: 'Input Required', text:'Please enter a value', icon: 'error'})
+            return Swal.fire({title: 'Input Required', text:'Please enter a value', icon: 'warning'})
         }
         // send dispatch with the input or currentUnderstanding if no input change or 'not answered'
         dispatch({
