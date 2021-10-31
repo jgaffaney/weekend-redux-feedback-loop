@@ -39,6 +39,7 @@ function Confirm() {
             <div className='review-line-item' onClick={() => {handleClick('understanding')}}>Understanding: {submission.understanding}</div>
             <div className='review-line-item' onClick={() => {handleClick('support')}}>Support: {submission.support}</div>
             <div className='review-line-item' onClick={() => {handleClick('comments')}}>Comments: {submission.comments}</div>
+            <br />
             <Button  variant= 'outlined'onClick={handleSubmit}>Submit</Button>
         </div>
     )

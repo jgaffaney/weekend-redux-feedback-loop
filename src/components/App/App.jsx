@@ -10,10 +10,15 @@ import Comments from '../Comments/Comments';
 import Confirm from '../Confirm/Confirm';
 import Success from '../Success/Success.jsx';
 import Admin from '../Admin/Admin.jsx'
+import {createTheme} from '@mui/material/styles'
 
 function App() {
 
   const dispatch = useDispatch();
+
+  const theme = createTheme({
+    
+  })
 
   const fetchFeedback = () =>{
     axios.get('/feedback')

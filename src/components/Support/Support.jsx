@@ -35,7 +35,7 @@ function Support() {
 
 
     return(
-        <div>
+        <div className='questionnaire'>
             <form onSubmit={handleSubmit}>
             <h2>How well are you being supported?</h2>
             <label>Support?</label>
@@ -45,6 +45,7 @@ function Support() {
                 defaultValue={currentSupport}
                 autoFocus />
         </form>
+        <br />
         <Button variant= 'outlined' onClick={back}>Back</Button>
         <Button variant= 'outlined' onClick={handleSubmit}>Next</Button>
         </div>

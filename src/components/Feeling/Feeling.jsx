@@ -28,7 +28,7 @@ function Feeling() {
     }
 
     return (
-        <div>
+        <div className='questionnaire'>
             <form onSubmit={handleSubmit}>
                 <h2>How are you feeling today?</h2>
                 <label>Feeling?</label>
@@ -38,7 +38,8 @@ function Feeling() {
                     defaultValue={currentFeeling} 
                     autoFocus />
             </form>
-            <Button variant= 'outlined' onClick={handleSubmit}>Next</Button>
+            <br />
+            <Button variant= 'outlined' color='success' onClick={handleSubmit}>Next</Button>
         </div>
     )
 }

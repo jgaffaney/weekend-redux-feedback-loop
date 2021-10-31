@@ -33,7 +33,7 @@ function Comments() {
     }
 
     return (
-        <div>
+        <div className='questionnaire'>
             <form onSubmit={handleSubmit}>
                 <h2>Any comments you want to leave?</h2>
                 <label>Comments?</label>
@@ -43,6 +43,7 @@ function Comments() {
                     defaultValue={currentComments} 
                     autoFocus />
             </form>
+            <br />
             <Button  variant= 'outlined'onClick={back}>Back</Button>
             <Button  variant= 'outlined'onClick={handleSubmit}>Next</Button>
         </div>

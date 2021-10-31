@@ -34,7 +34,7 @@ function Understanding() {
     }
 
     return (
-        <div>
+        <div className='questionnaire'>
             <form onSubmit={handleSubmit}>
                 <h2>How well are you understanding the content?</h2>
                 <label>Understanding?</label>
@@ -44,6 +44,7 @@ function Understanding() {
                     defaultValue={currentUnderstanding} 
                     autoFocus />
             </form>
+            <br />
             <Button variant= 'outlined' onClick={back}>Back</Button>
             <Button variant= 'outlined' onClick={handleSubmit}>Next</Button>
         </div>
