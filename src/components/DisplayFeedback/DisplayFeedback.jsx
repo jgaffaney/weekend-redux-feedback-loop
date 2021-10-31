@@ -1,4 +1,7 @@
 import axios from 'axios';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 function DisplayFeedback({ row, fetchFeedback }) {
 
@@ -19,7 +22,7 @@ function DisplayFeedback({ row, fetchFeedback }) {
             <td>{row.understanding}</td>
             <td>{row.support}</td>
             <td>{row.comments}</td>
-            <td><button onClick={handleDelete}>Delete</button></td>
+            <td><IconButton onClick={handleDelete} aria-label="delete"><DeleteIcon /></IconButton></td>
         </tr>
     )
 }

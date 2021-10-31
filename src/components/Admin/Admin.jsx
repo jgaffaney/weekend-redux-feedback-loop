@@ -1,6 +1,8 @@
 import {useSelector} from 'react-redux';
 import {useEffect} from 'react';
 import DisplayFeedback from '../DisplayFeedback/DisplayFeedback.jsx';
+import Table from '@mui/material/Table';
+
 
 function Admin({fetchFeedback}) {
 
@@ -12,7 +14,7 @@ function Admin({fetchFeedback}) {
 
     return(
         <div>
-            <table>
+            <Table>
                 <thead>
                     <tr>
                         <th>Feeling</th>
@@ -27,7 +29,7 @@ function Admin({fetchFeedback}) {
                         <DisplayFeedback row={row} fetchFeedback={fetchFeedback}/>
                     ))}
                 </tbody>
-            </table>
+            </Table>
         </div>
     )
 }
