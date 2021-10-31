@@ -17,10 +17,10 @@ function Comments() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // send dispatch with the input or currentComments if no input change
+        // send dispatch with the input or currentComments if no input change or 'not answered'
         dispatch({
             type: 'ADD_COMMENTS',
-            payload: commentsInput || currentComments
+            payload: commentsInput || currentComments || 'not answered'
         })
         setCommentsInput('');
         history.push('/confirm')
