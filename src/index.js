@@ -30,7 +30,7 @@ const submission = (state = {}, action) => {
 const displayFeedback = (state = [], action) => {
     switch (action.type) {
         case 'SET_FEEDBACK':
-            return [...state, action.payload]
+            return action.payload
         default:
             return state
     }

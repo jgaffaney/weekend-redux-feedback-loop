@@ -1,5 +1,6 @@
 import {useSelector} from 'react-redux';
 import {useEffect} from 'react';
+import DisplayFeedback from '../DisplayFeedback/DisplayFeedback.jsx';
 
 function Admin({fetchFeedback}) {
 
@@ -22,11 +23,8 @@ function Admin({fetchFeedback}) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>Feedback Results</tr>
-                    {feedbackResults.map((record) => (
-                        <tr>
-                            <td></td>
-                        </tr>
+                    {feedbackResults.map((row) => (
+                        <DisplayFeedback row={row} />
                     ))}
                 </tbody>
             </table>
