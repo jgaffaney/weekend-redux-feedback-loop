@@ -19,7 +19,7 @@ function Understanding() {
         // send dispatch with the input or currentUnderstanding if no input change or 'not answered'
         dispatch({
             type: 'ADD_UNDERSTANDING',
-            payload: understandingInput || currentUnderstanding || 'not answered'
+            payload: understandingInput || currentUnderstanding 
         })
         setUnderstandingInput('');
         history.push('/support');

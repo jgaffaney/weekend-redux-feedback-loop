@@ -20,7 +20,7 @@ function Support() {
         // send dispatch with the input or currentSupport if no input change or 'not answered'
         dispatch({
             type: 'ADD_SUPPORT',
-            payload: supportInput || currentSupport || 'not answered'
+            payload: supportInput || currentSupport 
         })
         setSupportInput('');
         history.push('/comments')

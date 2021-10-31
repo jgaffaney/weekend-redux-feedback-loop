@@ -20,7 +20,7 @@ function Comments() {
         // send dispatch with the input or currentComments if no input change or 'not answered'
         dispatch({
             type: 'ADD_COMMENTS',
-            payload: commentsInput || currentComments || 'not answered'
+            payload: commentsInput || currentComments
         })
         setCommentsInput('');
         history.push('/confirm')

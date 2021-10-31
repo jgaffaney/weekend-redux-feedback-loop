@@ -15,7 +15,7 @@ function Feeling() {
         // send dispatch with the input or currentFeeling if no input change or 'not answered'
         dispatch({
             type: 'ADD_FEELING',
-            payload: feelingInput || currentFeeling || 'not answered'
+            payload: feelingInput || currentFeeling
         })
         setFeelingInput('');
         history.push('/understanding')
