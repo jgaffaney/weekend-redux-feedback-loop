@@ -9,8 +9,14 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import logger from 'redux-logger';
 import {Provider} from 'react-redux';
 
+const defaultSubmission = {
+    feeling: 0,
+    understanding: 0,
+    support: 0,
+    comments: ' '
+}
 // Reducers
-const submission = (state = {}, action) => {
+const submission = (state = defaultSubmission, action) => {
     switch(action.type) {
         case 'ADD_FEELING':
             return {...state, feeling: action.payload}

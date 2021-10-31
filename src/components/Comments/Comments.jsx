@@ -1,6 +1,6 @@
-import {useDispatch} from 'react-redux';
-import {useState} from 'react';
-import {useHistory} from 'react-router-dom';
+import { useDispatch, userSelector, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 function Comments() {
@@ -9,6 +9,11 @@ function Comments() {
     const dispatch = useDispatch();
 
     const [commentsInput, setCommentsInput] = useState('');
+    const currentComments = useSelector(store => store.submission.comments);
+
+    const back = () => {
+        history.push('/support');
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,15 +26,19 @@ function Comments() {
         history.push('/confirm')
     }
 
-    return(
-        <form onSubmit={handleSubmit}>
-            <h2>Any comments you want to leave?</h2>
-            <label>Comments?</label>
-            <input 
-                type="textarea" 
-                onChange={(e)=>setCommentsInput(e.target.value)} />
-            <button type="submit">Next</button>
-        </form>
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <h2>Any comments you want to leave?</h2>
+                <label>Comments?</label>
+                <input
+                    type="textarea"
+                    onChange={(e) => setCommentsInput(e.target.value)}
+                    defaultValue={currentComments} />
+            </form>
+            <button onClick={back}>Back</button>
+            <button onClick={handleSubmit}>Next</button>
+        </div>
     )
 }
 

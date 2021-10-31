@@ -52,7 +52,7 @@ function App() {
           <Route exact path='/success'>
             <Success />
           </Route>
-          <Route>
+          <Route exact path='/admin'>
             <Admin fetchFeedback={fetchFeedback} />
           </Route>
         </header>

@@ -1,4 +1,4 @@
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 
@@ -8,6 +8,11 @@ function Support() {
     const history = useHistory();
 
     const [supportInput, setSupportInput] = useState('');
+    const currentSupport = useSelector(store=>store.submission.support)
+
+    const back = () =>{
+        history.push('/understanding')
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,14 +26,20 @@ function Support() {
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <div>
+            <form onSubmit={handleSubmit}>
             <h2>How well are you being supported?</h2>
             <label>Support?</label>
             <input 
                 type="number" 
-                onChange={(e)=> setSupportInput(e.target.value)} />
-            <button type="submit">Next</button>
+                onChange={(e)=> setSupportInput(e.target.value)} 
+                defaultValue={currentSupport}/>
         </form>
+        <button onClick={back}>Back</button>
+        <button onClick={handleSubmit}>Next</button>
+        </div>
+        
+
     )
 }
 

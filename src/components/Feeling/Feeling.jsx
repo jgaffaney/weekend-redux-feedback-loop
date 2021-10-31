@@ -1,11 +1,12 @@
-import {useDispatch} from 'react-redux';
-import {useState} from 'react'
-import {useHistory} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 
 function Feeling() {
 
     const dispatch = useDispatch();
     const history = useHistory();
+    const currentFeeling = useSelector(store => store.submission.feeling);
 
     const [feelingInput, setFeelingInput] = useState(0);
 
@@ -20,15 +21,18 @@ function Feeling() {
         history.push('/understanding')
     }
 
-    return(
-        <form onSubmit={handleSubmit}>
-            <h2>How are you feeling today?</h2>
-            <label>Feeling?</label>
-            <input 
-                type="number" 
-                onChange={(e) => {setFeelingInput(e.target.value)}} />
-            <button type="submit">Next</button>
-        </form>
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <h2>How are you feeling today?</h2>
+                <label>Feeling?</label>
+                <input
+                    type="number"
+                    onChange={(e) => { setFeelingInput(e.target.value) }}
+                    defaultValue={currentFeeling} />
+            </form>
+            <button onClick={handleSubmit}>Next</button>
+        </div>
     )
 }
 
