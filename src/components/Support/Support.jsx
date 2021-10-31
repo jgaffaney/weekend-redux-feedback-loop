@@ -2,6 +2,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {Button} from '@mui/material';
+import Swal from 'sweetalert2/dist/sweetalert2.all';
+
 
 function Support() {
 

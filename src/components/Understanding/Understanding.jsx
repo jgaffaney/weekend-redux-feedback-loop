@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import {Button} from '@mui/material';
+import Swal from 'sweetalert2/dist/sweetalert2.all';
+
 
 
 function Understanding() {
@@ -20,7 +22,7 @@ function Understanding() {
         e.preventDefault();
         // require input
         if(!understandingInput && !currentUnderstanding) {
-            return alert('a value must be provided')
+            return Swal.fire({title: 'Input Required', text:'Please enter a value', icon: 'error'})
         }
         // send dispatch with the input or currentUnderstanding if no input change or 'not answered'
         dispatch({

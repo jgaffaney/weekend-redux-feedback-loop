@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import {Button} from '@mui/material';
-
+import Swal from 'sweetalert2/dist/sweetalert2.all';
 
 
 function Comments() {
@@ -21,7 +21,7 @@ function Comments() {
         e.preventDefault();
         // require input
         if(!commentsInput && !currentComments) {
-            return alert('a value or must be provided')
+            return Swal.fire({title: 'Input Required', text:'Please enter a value', icon: 'error'})
         }
         // send dispatch with the input or currentComments if no input change or 'not answered'
         dispatch({
