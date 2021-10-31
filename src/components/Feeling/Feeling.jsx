@@ -35,7 +35,7 @@ function Feeling() {
                     type="number"
                     onChange={(e) => { setFeelingInput(e.target.value) }}
                     defaultValue={currentFeeling} 
-                    required />
+                    autoFocus />
             </form>
             <Button variant= 'outlined' onClick={handleSubmit}>Next</Button>
         </div>

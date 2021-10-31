@@ -40,7 +40,8 @@ function Support() {
             <input 
                 type="number" 
                 onChange={(e)=> setSupportInput(e.target.value)} 
-                defaultValue={currentSupport}/>
+                defaultValue={currentSupport}
+                autoFocus />
         </form>
         <Button variant= 'outlined' onClick={back}>Back</Button>
         <Button variant= 'outlined' onClick={handleSubmit}>Next</Button>

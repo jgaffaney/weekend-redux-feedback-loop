@@ -40,7 +40,8 @@ function Comments() {
                 <input
                     type="textarea"
                     onChange={(e) => setCommentsInput(e.target.value)}
-                    defaultValue={currentComments} />
+                    defaultValue={currentComments} 
+                    autoFocus />
             </form>
             <Button  variant= 'outlined'onClick={back}>Back</Button>
             <Button  variant= 'outlined'onClick={handleSubmit}>Next</Button>

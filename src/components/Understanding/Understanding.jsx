@@ -39,7 +39,8 @@ function Understanding() {
                 <input
                     type="number"
                     onChange={(e) => setUnderstandingInput(e.target.value)} 
-                    defaultValue={currentUnderstanding} />
+                    defaultValue={currentUnderstanding} 
+                    autoFocus />
             </form>
             <Button variant= 'outlined' onClick={back}>Back</Button>
             <Button variant= 'outlined' onClick={handleSubmit}>Next</Button>
