@@ -24,7 +24,7 @@ function Admin({fetchFeedback}) {
                 </thead>
                 <tbody>
                     {feedbackResults.map((row) => (
-                        <DisplayFeedback row={row} />
+                        <DisplayFeedback row={row} fetchFeedback={fetchFeedback}/>
                     ))}
                 </tbody>
             </table>
