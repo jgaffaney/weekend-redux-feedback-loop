@@ -10,10 +10,10 @@ import logger from 'redux-logger';
 import {Provider} from 'react-redux';
 
 const defaultSubmission = {
-    feeling: 0,
-    understanding: 0,
-    support: 0,
-    comments: ' '
+    feeling: '',
+    understanding: '',
+    support: '',
+    comments: ''
 }
 // Reducers
 const submission = (state = defaultSubmission, action) => {

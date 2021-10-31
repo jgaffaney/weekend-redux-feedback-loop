@@ -12,6 +12,10 @@ function Feeling() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // require input
+        if(!feelingInput && !currentFeeling) {
+            return alert('a value must be provided')
+        }
         // send dispatch with the input or currentFeeling if no input change or 'not answered'
         dispatch({
             type: 'ADD_FEELING',
@@ -29,7 +33,8 @@ function Feeling() {
                 <input
                     type="number"
                     onChange={(e) => { setFeelingInput(e.target.value) }}
-                    defaultValue={currentFeeling} />
+                    defaultValue={currentFeeling} 
+                    required />
             </form>
             <button onClick={handleSubmit}>Next</button>
         </div>

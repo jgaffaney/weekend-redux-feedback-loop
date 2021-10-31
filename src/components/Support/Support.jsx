@@ -16,7 +16,10 @@ function Support() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        // require input
+        if(!supportInput && !currentSupport) {
+            return alert('a value must be provided')
+        }
         // send dispatch with the input or currentSupport if no input change or 'not answered'
         dispatch({
             type: 'ADD_SUPPORT',

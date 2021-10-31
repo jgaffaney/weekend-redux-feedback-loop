@@ -16,6 +16,10 @@ function Understanding() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // require input
+        if(!understandingInput && !currentUnderstanding) {
+            return alert('a value must be provided')
+        }
         // send dispatch with the input or currentUnderstanding if no input change or 'not answered'
         dispatch({
             type: 'ADD_UNDERSTANDING',

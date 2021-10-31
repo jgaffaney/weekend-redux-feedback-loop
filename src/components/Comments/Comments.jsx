@@ -17,6 +17,10 @@ function Comments() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // require input
+        if(!commentsInput && !currentComments) {
+            return alert('a value or must be provided')
+        }
         // send dispatch with the input or currentComments if no input change or 'not answered'
         dispatch({
             type: 'ADD_COMMENTS',
