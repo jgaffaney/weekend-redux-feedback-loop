@@ -18,6 +18,7 @@ function App() {
   const fetchFeedback = () =>{
     axios.get('/feedback')
           .then(response => {
+            console.log('GET response: ', response);
             dispatch({
               type: 'SET_FEEDBACK',
               payload: response.data

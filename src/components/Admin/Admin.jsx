@@ -23,7 +23,11 @@ function Admin({fetchFeedback}) {
                 </thead>
                 <tbody>
                     <tr>Feedback Results</tr>
-                    {/* {feedbackResults.map(())} */}
+                    {feedbackResults.map((record) => (
+                        <tr>
+                            <td></td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
